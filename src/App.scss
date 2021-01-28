@@ -16,6 +16,7 @@ $txtCol1: #8898aa;
   display: grid;
   grid-template-columns: repeat(12, minmax(auto, 7rem));
   grid-template-rows: repeat(6, 7rem);
+  gap: 0 .5rem;
   justify-content: center;
   background: $mainBg;
 

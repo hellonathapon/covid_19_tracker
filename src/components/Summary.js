@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function Summary({ todayData }) {
 
-    console.log(todayData)
 
     return (
         <div className="summary">
