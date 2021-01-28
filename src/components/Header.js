@@ -1,10 +1,16 @@
 import React from 'react'
+import Logo from '../logo.svg'
 
 export default function Header() {
     return (
         <header className="header">
-            <h2>COVID-19 Tracker</h2>
-            <p>Stay safe and keep yourself informed!</p>
+            <figure>
+                <img className="App-logo" src={Logo} alt="react logo"/>
+            </figure>
+            <article>
+                <h1>COVID-19 Tracker</h1>
+                <p>Stay safe and keep yourself informed!</p>
+            </article>
         </header>
     )
 }

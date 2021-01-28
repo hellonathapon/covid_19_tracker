@@ -45,6 +45,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="blue-bg"></div>
       <Header />
       <Summary todayData={todayData} />
       <LineChart labels={labels} cases={cases} recovered={recovered} deaths={deaths} />

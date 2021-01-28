@@ -13,7 +13,7 @@ export default function LineChart({labels, cases, recovered, deaths}) {
             },
             {
                 label: 'Recovered',
-                borderColor: "#3cba9f",
+                borderColor: "#16c3bb",
                 fill: false,
                 data: recovered,
             },
@@ -25,10 +25,24 @@ export default function LineChart({labels, cases, recovered, deaths}) {
             },
         ]
     }
+    const options = {
+        scales: {
+            xAxes: [{
+                gridLines: {
+                    display:false
+                }
+            }],
+            yAxes: [{
+                gridLines: {
+                    display:false
+                }   
+            }]
+        }
+    }
 
     return (
         <div className="line-chart">
-            <Line data={data}/>
+            <Line className="chart" data={data} options={options}/>
         </div>
     )
 }
