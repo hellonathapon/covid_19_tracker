@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.scss';
+import { Header, Summary, LineChart } from './components'
 
 function App() {
+  let [todayData, setTodayData] = React.useState(null);
+  let [label, setLabel] = React.useState([]);
+
+  const fetchApi = async () => {
+    const url = `https://covid19.th-stat.com/api/open/`
+    try{
+      const apiData = await fetch(`${url}today`);
+      const jsonData = await apiData.json();
+      setTodayData(jsonData);
+    }catch(err) {
+      console.error(err)
+    }
+  }
+
+  React.useEffect(() => {
+    fetchApi();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Summary todayData={todayData} />
+      <LineChart />
     </div>
   );
 }

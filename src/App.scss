@@ -1,0 +1,80 @@
+$mainBg: #f3f4fa;
+$bs1: 0 0 2rem 0 rgba(136,152,170,.15);
+$txtCol0: #32325d;
+$txtCol1: #8898aa;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(auto, 7rem));
+  grid-template-rows: repeat(6, 7rem);
+  justify-content: center;
+  background: $mainBg;
+
+  .header {
+    grid-column: 1 / 13;
+  }
+  .summary {
+    grid-column: 1 / 4;
+    grid-row: 2 / 6;
+    .sum__card {
+      background: #fff;
+      border-radius: .375rem;
+      box-shadow: $bs1;
+      margin-bottom: .5rem;
+      display: flex;
+      justify-content: space-between;
+      padding: .5rem 1rem;
+      article {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: start;
+        p {
+          color: $txtCol1;
+        }
+        h4 {
+          color: $txtCol0;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .line-chart {
+    grid-column: 4 / 13;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .summary {
+      grid-column: 1 /13;
+      grid-row: 2 / 5;
+    }
+    .line-chart {
+      grid-column: 1 /13;
+      grid-row: 5 / 7;
+    }
+  }
+}
+
+
+// .App-logo {
+//   height: 40vmin;
+//   pointer-events: none;
+//   animation: App-logo-spin infinite 20s linear;
+// }
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
