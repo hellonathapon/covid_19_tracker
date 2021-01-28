@@ -2,8 +2,8 @@ import React from 'react'
 import Arrow from '../assets/svg/arrow.svg'
 import ArrowGreen from '../assets/svg/green-arrow.svg'
 import Virus from '../assets/svg/virus.svg'
-import Cure from '../assets/svg/cure.svg'
-import Ambulance from '../assets/svg/ambulance.svg'
+import Defense from '../assets/svg/defense.svg'
+import Grave from '../assets/svg/grave.svg'
 
 export default function Summary({ todayData }) {
 
@@ -32,7 +32,7 @@ export default function Summary({ todayData }) {
                         { todayData ? (<span>{todayData.UpdateDate}</span>): null }
                     </div>
                 </article>
-                <figure><img src={Cure} className="icon" alt="cure icon"/></figure>
+                <figure><img src={Defense} className="icon" alt="cure icon"/></figure>
             </div>
             <div className="sum__card">
                 <article>
@@ -44,7 +44,7 @@ export default function Summary({ todayData }) {
                         { todayData ? (<span>{todayData.UpdateDate}</span>): null }
                     </div>
                 </article>
-                <figure><img src={Ambulance} className="icon" alt="cure icon"/></figure>
+                <figure><img src={Grave} className="icon" alt="wreath icon"/></figure>
             </div>
         </div>
     )
